@@ -12,3 +12,13 @@
 	  (hash-update! myhash i (lambda (n) (+ 1 n)))
 	  (hash-set! myhash i 1)))
     myhash))
+
+;; pads input list with padval if below n    
+(define (list-pad lst [n 0] #:padval [padval '()])
+  (let ([len (length lst)]
+	[padn (max n 0)])
+    (if (> padn len)
+      (append lst (build-list (- padn len) (lambda (n) padval)))
+      lst)
+    ))
+      
