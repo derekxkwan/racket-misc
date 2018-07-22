@@ -25,4 +25,7 @@
       (append lst (build-list (- padn len) (lambda (n) padval)))
       lst)
     ))
-      
+
+;; intertwine two lists (must be same length)
+(define (list-intertwine lst-a lst-b)
+  (flatten (map cons lst-a lst-b)))
